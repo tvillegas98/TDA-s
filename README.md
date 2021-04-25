@@ -1,2 +1,7 @@
 # __Estructuras de Datos__
-### En este repositorio cargaré las estructuras de datos en distintos lenguajes, junto con algunos ejercicios y aplicaciones.
+## Repositorio utilizado para guardar estructuras de datos hechas en distintos lenguajes, junto con ejercicios y aplicaciones.
+
+### Lenguajes de programación utilizados.
+- Python
+- C
+- JavaScript
