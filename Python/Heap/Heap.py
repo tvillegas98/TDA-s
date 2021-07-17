@@ -96,8 +96,3 @@ def f(a,b) -> int:
     if a > b: return 1
     if b > a: return -1
     return 0
-
-lista = list(range(1,100))
-random.shuffle(lista)
-Heap.heapsort(lista, f)
-print(lista)
