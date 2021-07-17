@@ -1,4 +1,4 @@
-from heap import Heap
+from Heap import Heap
 
 
 def min_cmp(a, b):
@@ -19,16 +19,16 @@ def top_k_min_heap(array, k):
     '''
     auxiliar_heap = Heap(min_cmp)
     for i in range(k):
-        auxiliar_heap.heap_encolar(array[i])
+        auxiliar_heap.queue(array[i])
     
     for i in range(k+1, len(array)):
-        if array[i] > auxiliar_heap.heap_ver_max():
-            auxiliar_heap.heap_desencolar()
-            auxiliar_heap.heap_encolar(array[i])
+        if array[i] > auxiliar_heap.top():
+            auxiliar_heap.dequeue()
+            auxiliar_heap.queue(array[i])
 
     result = list()
-    while not auxiliar_heap.heap_esta_vacio():
-        result.append(str(auxiliar_heap.heap_desencolar()))
+    while not auxiliar_heap.is_empty():
+        result.append(str(auxiliar_heap.dequeue()))
     result = ",".join(result)
     print(f"Using a min heap in top-k algorithm: {result}")
 
@@ -40,16 +40,16 @@ def top_k_max_heap(array, k):
     '''
     auxiliar_heap = Heap(max_cmp)
     for element in array:
-        auxiliar_heap.heap_encolar(element)
+        auxiliar_heap.queue(element)
     
     result = list()
     for i in range(k):
-        result.append(str(auxiliar_heap.heap_desencolar()))
+        result.append(str(auxiliar_heap.dequeue()))
     result = ",".join(result)
     print(f"Using a max heap in top-k algorithm: {result}")
 
 if __name__ == "__main__":
     array = [1,2,3,4,5,6,7,8,9]
     array = list(reversed(array))
-    top_k_min_heap(array, 3)
-    top_k_max_heap(array, 3)
+    top_k_min_heap(array, 7)
+    top_k_max_heap(array, 7)
