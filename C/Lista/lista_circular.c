@@ -135,6 +135,6 @@ void lista_circular_iterar(lista_circular_t* lista, bool(*visitar)(void* dato, v
     do{
         iterar = visitar(aux->dato, extra);
         aux = aux->prox;
-    }while(aux != lista->prim and iterar);
+    }while(aux != lista->prim && iterar);
 }
 
